@@ -16,6 +16,20 @@
             - [X] await (anders krijg je een promise)
             - [X] We hebben de data (loggen)
     
+
+4. Maak een functie die ongeacht het aantal currencies die in een land gebruikt worden, een string maakt. In een land kunnen één of twee currencies gebruikt worden:
+    - [X] definieer functie
+    - [X] voeg parameter toe
+    - [X] Maak variable aan om string op te slaan en geef deze een lege string waarde  
+    - [X] loop door de array
+    - [X]  if statement wanneer teller i gelijks is aan 0 dan de eerste string anders volgende steeds toevoegen
+    - [X] voeg elke entry toe aan de string 
+    - [X] return string
+    - [X] roep functie aan met argument response.data[0].currencies
+
+
+
+
 7. Voeg een plaatje toe aan de pagina (flag van land)
 
 - [ ] url van het plaatje  (uit response van de api)
