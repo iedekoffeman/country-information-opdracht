@@ -1,85 +1,51 @@
+/**
+ * Functions are defined in functions.js
+ */
+
 const searchButton = document.getElementById('searchButton');
 
 searchButton.addEventListener('click', async () => {
 
-    const response = await axios.get ("https://restcountries.eu/rest/v2/name/belgium");
+    const {data: country} = await axios.get ("https://restcountries.eu/rest/v2/name/belgium");
 
-    console.log(response.data);
+    console.log(country);
+
+    //Destructuring object
+    const { name, capital, subregion, population, currencies, languages, flag } = country[0];
 
     //Opdracht2 en 3
-    const country = response.data[0].name;
-    const capital = response.data[0].capital;
-    const subRegion = response.data[0].subregion;
-    const population = response.data[0].population;
-
-    console.log(`${country} is situated in ${subRegion}. It has a population of ${population} people.`);
-    const countryGeographicInfo = `${country} is situated in ${subRegion}. It has a population of ${population} people.`;
-
-    console.log(`The capital is ${capital}`);
+    const countryGeographicInfo = `${name} is situated in ${subregion}. It has a population of ${population} people.`;
     const capitalInfo = `The capital is ${capital} `;
+    //Log to console
+    console.log(countryGeographicInfo);
+    console.log(capitalInfo);
 
-    //opdracht 4
-    function getCurrencyString (countryCurrency) {
-        let currencyString = "";
+    //Opdracht 4
+    //Call function getCurrenciesInString
+    console.log(getCurrenciesInString(currencies));
 
-        for (let i = 0; i < countryCurrency.length; i++) {
-
-            if (i === 0) {
-                currencyString += `and you can pay with ${countryCurrency[i].name}'s `;
-            } else {
-                currencyString += `and ${countryCurrency[i].name}'s`;
-            }
-
-        }
-
-        return currencyString;
-    }
-
-    console.log(getCurrencyString(response.data[0].currencies));
+    //Opdracht 5
+    //Checked with aruba and germany, still works.
 
     //Opdracht 6
-    //Iets andere oplossing geprobeerd dan de vorige opdracht. Het werkt maar twijfel nog of dit de meest efficiënte manier is.
-    function getCountryLanguages(countryLanguages) {
-
-        const [first, second, ...rest] = countryLanguages;
-
-        let languagesString = `They speak ${first.name}`;
-
-        if(!rest) {
-            languagesString += `and `;
-        } else {
-            languagesString += `, `;
-        }
-
-        languagesString += second.name;
-
-            for(let i = 0; i < rest.length; i++) {
-
-                languagesString += ` and ${rest[i].name}`;
-
-            }
-
-        return languagesString;
-    }
-
-    console.log(getCountryLanguages(response.data[0].languages));
+    //Call function getCountryLanguages and log to console
+    console.log(getCountryLanguages(languages));
 
     //Opdracht 7
-    const urlFlag = response.data[0].flag;
+    //Add flag
+    const urlFlag = flag;
     const divFlagElement = document.getElementById('flag');
     const imgFlagElement = document.createElement('img');
     imgFlagElement.setAttribute(`src`, urlFlag );
     divFlagElement.appendChild(imgFlagElement);
 
-    function addToPage(elementId, elementValue) {
-
-        const element = document.getElementById(`${elementId}`);
-        element.textContent = elementValue;
-    }
-
-    addToPage("country-name", country);
+    //Call function addToPage for all other elements
+    addToPage("country-name", name);
     addToPage("country-geographic", countryGeographicInfo );
-    addToPage("capital-valuta", capitalInfo + getCurrencyString(response.data[0].currencies))
-    addToPage("country-languages", getCountryLanguages(response.data[0].languages))
+    addToPage("capital-valuta", capitalInfo + getCurrenciesInString(currencies))
+    addToPage("country-languages", getCountryLanguages(languages))
 });
+
+
+
 
