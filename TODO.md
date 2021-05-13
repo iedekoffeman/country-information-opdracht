@@ -27,9 +27,19 @@
     - [X] return string
     - [X] roep functie aan met argument response.data[0].currencies
 
+5. - [X] checked, still works. 
 
-
-
+6. - [X] defineer functie
+   - [X] voeg parameter toe
+   - [X] Maak variabele aan om string in op te slaan
+   - [X] destruct array
+   - [X] wijs eerste entry array toe aan string
+   - [X] bepaal of de array ook meer dan 2 entries heeft en voeg anders een , of and toe. 
+   - [X] voeg tweede entry van array aan string toe
+   - [X] Maak een loop om, wanneer aanwezig, de rest entries toe te voegen.
+   - [X] Return string
+    -[X] Roep functie aan
+    
 7. Voeg een plaatje toe aan de pagina (flag van land)
 
 - [ ] url van het plaatje  (uit response van de api)

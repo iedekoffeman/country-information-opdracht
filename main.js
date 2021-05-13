@@ -2,12 +2,10 @@ const searchButton = document.getElementById('searchButton');
 
 searchButton.addEventListener('click', async () => {
 
-    const response = await axios.get (
+    const response = await axios.get ("https://restcountries.eu/rest/v2/name/afganistan");
 
-        "https://restcountries.eu/rest/v2/name/singapore"
-
-    );
     console.log(response.data);
+
     //Opdracht2 en 3
     const country = response.data[0].name;
     const capital = response.data[0].capital;
@@ -36,5 +34,31 @@ searchButton.addEventListener('click', async () => {
 
     console.log(getCurrencyString(response.data[0].currencies));
 
+    //Opdracht 6
+    //Iets andere oplossing geprobeerd dan de vorige opdracht. Het werkt maar twijfel nog of dit de meest efficiënte manier is.
+    function getCountryLanguages(countryLanguages) {
+
+        const [first, second, ...rest] = countryLanguages;
+
+        let languagesString = `They speak ${first.name} `;
+
+        if(!rest) {
+            languagesString += `and `;
+        } else {
+            languagesString += `,`;
+        }
+
+        languagesString += second.name;
+
+            for(let i = 0; i < rest.length; i++) {
+
+                languagesString += ` and ${rest[i].name}`;
+
+            }
+
+        return languagesString;
+    }
+
+    console.log(getCountryLanguages(response.data[0].languages));
 });
 
