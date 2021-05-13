@@ -2,7 +2,7 @@ const searchButton = document.getElementById('searchButton');
 
 searchButton.addEventListener('click', async () => {
 
-    const response = await axios.get ("https://restcountries.eu/rest/v2/name/afganistan");
+    const response = await axios.get ("https://restcountries.eu/rest/v2/name/belgium");
 
     console.log(response.data);
 
@@ -12,8 +12,11 @@ searchButton.addEventListener('click', async () => {
     const subRegion = response.data[0].subregion;
     const population = response.data[0].population;
 
-    console.log(`${country} is situated in ${subRegion}. It has a population of ${population} people`);
+    console.log(`${country} is situated in ${subRegion}. It has a population of ${population} people.`);
+    const countryGeographicInfo = `${country} is situated in ${subRegion}. It has a population of ${population} people.`;
+
     console.log(`The capital is ${capital}`);
+    const capitalInfo = `The capital is ${capital} `;
 
     //opdracht 4
     function getCurrencyString (countryCurrency) {
@@ -40,12 +43,12 @@ searchButton.addEventListener('click', async () => {
 
         const [first, second, ...rest] = countryLanguages;
 
-        let languagesString = `They speak ${first.name} `;
+        let languagesString = `They speak ${first.name}`;
 
         if(!rest) {
             languagesString += `and `;
         } else {
-            languagesString += `,`;
+            languagesString += `, `;
         }
 
         languagesString += second.name;
@@ -68,5 +71,15 @@ searchButton.addEventListener('click', async () => {
     imgFlagElement.setAttribute(`src`, urlFlag );
     divFlagElement.appendChild(imgFlagElement);
 
+    function addToPage(elementId, elementValue) {
+
+        const element = document.getElementById(`${elementId}`);
+        element.textContent = elementValue;
+    }
+
+    addToPage("country-name", country);
+    addToPage("country-geographic", countryGeographicInfo );
+    addToPage("capital-valuta", capitalInfo + getCurrencyString(response.data[0].currencies))
+    addToPage("country-languages", getCountryLanguages(response.data[0].languages))
 });
 
