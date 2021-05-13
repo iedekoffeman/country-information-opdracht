@@ -58,8 +58,8 @@
     - [X] Interacties 
       - [X] inputveld selecteren
       - [X] eventListener inputveld toevoegen (keyup)
-    - [ ] in het event kijken naar de code event.code
-    - [ } als event.code enter is dan -> data ophalen uit de api
+    - [X] in het event kijken naar de code event.code
+    - [X} als event.code enter is dan -> data ophalen uit de api
     
 9. Zorg ervoor dat de waarde uit het input veld wordt gebruikt als query voor de get request
 
