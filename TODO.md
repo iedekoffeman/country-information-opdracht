@@ -56,8 +56,8 @@
     - [X] Maak een inputveld
     - [X] id geven aan het inputveld
     - [X] Interacties 
-      - [ ] inputveld selecteren
-      - [ ] eventListener inputveld toevoegen (keyup)
+      - [X] inputveld selecteren
+      - [X] eventListener inputveld toevoegen (keyup)
     - [ ] in het event kijken naar de code event.code
     - [ } als event.code enter is dan -> data ophalen uit de api
     

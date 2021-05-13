@@ -44,7 +44,15 @@ searchButton.addEventListener('click', async () => {
     addToPage("country-geographic", countryGeographicInfo );
     addToPage("capital-valuta", capitalInfo + getCurrenciesInString(currencies))
     addToPage("country-languages", getCountryLanguages(languages))
+
 });
+//Opdracht 8
+const userInput = document.getElementById("user-input");
+userInput.addEventListener('keyup', event => {
+    if(event.key === 'Enter') {
+        console.log("HAHAHAHA ENTER");
+    }
+})
 
 
 
