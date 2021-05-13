@@ -60,5 +60,13 @@ searchButton.addEventListener('click', async () => {
     }
 
     console.log(getCountryLanguages(response.data[0].languages));
+
+    //Opdracht 7
+    const urlFlag = response.data[0].flag;
+    const divFlagElement = document.getElementById('flag');
+    const imgFlagElement = document.createElement('img');
+    imgFlagElement.setAttribute(`src`, urlFlag );
+    divFlagElement.appendChild(imgFlagElement);
+
 });
 
