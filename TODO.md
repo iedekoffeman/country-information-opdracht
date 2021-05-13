@@ -52,10 +52,10 @@
     
 8. Maak een input veld op de pagina en zorg ervoor dat als de gebruiker op enter drukt,
 
-- [ ] HTML
-    - [ ] Maak een inputveld
-    - [ ] id geven aan het inputveld
-    - [ ] Interacties 
+- [X] HTML
+    - [X] Maak een inputveld
+    - [X] id geven aan het inputveld
+    - [X] Interacties 
       - [ ] inputveld selecteren
       - [ ] eventListener inputveld toevoegen (keyup)
     - [ ] in het event kijken naar de code event.code
