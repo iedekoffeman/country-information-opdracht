@@ -63,8 +63,8 @@
     
 9. Zorg ervoor dat de waarde uit het input veld wordt gebruikt als query voor de get request
 
-- [ ] html
-  - [ ] Selecteer het input veld (const inputfield = document..)
-  - [ ] inputfield.value -> 
-  - [ ] In de url van de getrequest het land vervangen door de dynamische waarde  
+- [X] html
+  - [X] Selecteer het input veld (const inputfield = document..)
+  - [X] inputfield.value -> 
+  - [X] In de url van de getrequest het land vervangen door de dynamische waarde  
 

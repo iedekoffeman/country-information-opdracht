@@ -1,20 +1,25 @@
 /**
  * Functions are defined in functions.js
  */
-
+const inputField = document.getElementById("user-input");
 const searchButton = document.getElementById('searchButton');
+let query = ``;
 
 searchButton.addEventListener('click',  () => {
 
-    getCountryData();
+    query = inputField.value;
+    getCountryData(query);
+    inputField.value = "";
 
 });
 //Opdracht 8
-const userInput = document.getElementById("user-input");
-userInput.addEventListener('keyup', event => {
+inputField.addEventListener('keyup', event => {
     if(event.key === 'Enter') {
-        //console.log("HAHAHAHA ENTER");
-        getCountryData();
+
+        query = inputField.value;
+        getCountryData(query);
+        inputField.value = "";
+
     }
 })
 
