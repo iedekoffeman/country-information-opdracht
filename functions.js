@@ -49,7 +49,7 @@ try {
 
     console.error(e);
     const errorElement = document.getElementById('error');
-    errorElement.textContent = `Sorry man, ${query} is not a real country....`;
+    errorElement.textContent = `Sorry man, ${query} is not a real country.... try again!`;
 
 }
 
